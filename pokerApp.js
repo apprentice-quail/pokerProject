@@ -25,16 +25,41 @@ var validatePlayerAmount = function(isThisManyPlayersOK) {
 };
 
 var startPrompt = function() {
-	var howManyPlayers = sget("How many people are playing?").trim();
+	var howManyPlayers = sget("\nHow many people are playing?\n").trim();
 	numberOfPlayers = parseInt(howManyPlayers);
 	validatePlayerAmount(numberOfPlayers);
 	if (!howManyPlayers.match(/^[0-9]+$/)) {
 		console.log("Please use a number.");
 		startPrompt();
 	} else if (numberOfPlayers >= 2 && numberOfPlayers <= 7) {
-		console.log(numberOfPlayers + " players are playing.");
-		process.exit();
+		console.log("\n" + numberOfPlayers + " players are playing.\n");
+		gameType();
 	}
+};
+
+var gameType = function () {
+  var game = sget("\nWhat game would you like to play?\n\n1. Poker\n2. Blackjack\n3. Go Fish\n").trim();
+
+  if (game == "1") {
+  	console.log("\nYou chose poker\n");
+    poker();
+  }
+  else if (game == "2") {
+  	console.log("\nBlackjack is currently unavailable...Please choose a different game..\n");
+    gameType();
+  }
+  else if (game == "3") {
+  	console.log("\nGo Fish is currently unavailable...Please choose a different game..\n");
+    gameType();
+  }
+  else {
+  	console.log("Invalid selection..");
+    gameType();
+  }
+};
+
+var poker = function () {
+
 };
 
 startPrompt();

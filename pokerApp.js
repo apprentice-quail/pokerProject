@@ -96,7 +96,7 @@ var player6 = new pokerPlayer();
 var player7 = new pokerPlayer();
 
 var allPlayersInGame = [];
-var allPlayersOutGame = [];
+var allPlayersOutGame = [player1, player2, player3, player4, player5, player6, player7];
 
 var validatePlayerAmount = function(isThisManyPlayersOK) {
 	if(isThisManyPlayersOK > maxPlayersAllowed) {
@@ -148,6 +148,7 @@ var poker = function () {
   for (i = 0; i <= numberOfPlayers -1; i++) {
   	allPlayersInGame.push(allPlayersOutGame[i]);
   }
+
   console.log(allPlayersInGame);	
   pokerGame();
 };

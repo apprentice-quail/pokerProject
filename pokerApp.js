@@ -26,17 +26,15 @@ var validatePlayerAmount = function(isThisManyPlayersOK) {
 
 var startPrompt = function() {
 	var howManyPlayers = sget("How many people are playing?").trim();
-		if (!howManyPlayers.match(/^[0-9]+$/)) {
-				console.log("Please use a number.");
-				startPrompt();
-		} else {
-			numberOfPlayers = parseInt(howManyPlayers);
-			validatePlayerAmount(numberOfPlayers);
-
-			if (numberOfPlayers >= 2 && numberOfPlayers <= 7) {
-				console.log(numberOfPlayers + " players are playing.");
-			}
-		}
+	numberOfPlayers = parseInt(howManyPlayers);
+	validatePlayerAmount(numberOfPlayers);
+	if (!howManyPlayers.match(/^[0-9]+$/)) {
+		console.log("Please use a number.");
+		startPrompt();
+	} else if (numberOfPlayers >= 2 && numberOfPlayers <= 7) {
+		console.log(numberOfPlayers + " players are playing.");
+		process.exit();
+	}
 };
 
 startPrompt();

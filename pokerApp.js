@@ -8,3 +8,5 @@
 //2 pair
 //1 pair
 //high card
+
+var sget = require('sget');

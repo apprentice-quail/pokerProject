@@ -16,7 +16,7 @@ var Card = function(number, suit) {
 	this.number = number;
 	this.suit = suit;
 };
-
+var shuffleDeck;
 var twoClub = new Card(2, "club");
 var threeClub = new Card(3, "club");
 var fourClub = new Card(4, "club");
@@ -145,13 +145,33 @@ var gameType = function () {
 };
 
 var poker = function () {
-  for (i = 0; i <= numberOfPlayers -1; i++) {
-  	allPlayersInGame.push(allPlayersOutGame[i]);
-  }
+  //for (i = 0; i <= numberOfPlayers -1; i++) {
+  //	allPlayersInGame.push(allPlayersOutGame[i]);
+  //}
 
-  console.log(allPlayersInGame);	
-  pokerGame();
+  console.log(shuffleDeck);	
+  startShuffle();
+
 };
+
+function shuffle(array) {
+	var currentIndex = array.length, temporaryValue, randomIndex;
+  // While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+    // Pick a remaining element...
+    	randomIndex = Math.floor(Math.random() * currentIndex);
+    	currentIndex -= 1;
+    // And swap it with the current element.
+    	temporaryValue = array[currentIndex];
+    	array[currentIndex] = array[randomIndex];
+    	array[randomIndex] = temporaryValue;
+	}
+  return array;
+}
+
+function startShuffle() {
+  shuffleDeck = shuffle(allCards);
+}
 
 var pokerGame = function () {
   

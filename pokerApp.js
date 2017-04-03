@@ -130,7 +130,7 @@ var gameType = function () {
 
   if (game == "1") {
   	console.log("\nYou chose poker\n");
-    poker();
+    startShuffle();
   }
   else if (game == "2") {
   	console.log("\nBlackjack is currently unavailable...Please choose a different game..\n");
@@ -147,13 +147,40 @@ var gameType = function () {
 };
 
 var poker = function () {
-  //for (i = 0; i <= numberOfPlayers -1; i++) {
-  //	allPlayersInGame.push(allPlayersOutGame[i]);
+  for (i = 0; i <= numberOfPlayers -1; i++) {
+  	allPlayersInGame.push(allPlayersOutGame[i]);
+  }
+
+  for (i=0; i <= allPlayersInGame.length - 1; i++) {
+    allPlayersInGame[i].c1 = shuffleDeck[i];
+    shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
+ }
+
+ for (i=0; i <= allPlayersInGame.length - 1; i++) {
+    allPlayersInGame[i].c2 = shuffleDeck[i];
+    shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
+ }
+
+ for (i=0; i <= allPlayersInGame.length - 1; i++) {
+    allPlayersInGame[i].c3 = shuffleDeck[i];
+    shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
+ }
+
+ for (i=0; i <= allPlayersInGame.length - 1; i++) {
+    allPlayersInGame[i].c4 = shuffleDeck[i];
+    shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
+ }
+
+ for (i=0; i <= allPlayersInGame.length - 1; i++) {
+    allPlayersInGame[i].c5 = shuffleDeck[i];
+    shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
+ }
+ 
+ console.log(allPlayersInGame);
+//for (i = 0; i <= allPlayersInGame.length -1; i++) {
+  //allPlayersInGame[i].c2 = "no";
   //}
-
   
-  startShuffle();
-
 };
 
 function shuffle(array) {
@@ -173,7 +200,7 @@ function shuffle(array) {
 
 function startShuffle() {
   shuffleDeck = shuffle(allCards);
-  console.log(shuffleDeck);
+  poker();
 }
 
 var pokerGame = function () {

@@ -16,7 +16,9 @@ var Card = function(number, suit) {
 	this.number = number;
 	this.suit = suit;
 };
+
 var shuffleDeck;
+
 var twoClub = new Card(2, "club");
 var threeClub = new Card(3, "club");
 var fourClub = new Card(4, "club");
@@ -149,7 +151,7 @@ var poker = function () {
   //	allPlayersInGame.push(allPlayersOutGame[i]);
   //}
 
-  console.log(shuffleDeck);	
+  
   startShuffle();
 
 };
@@ -171,6 +173,7 @@ function shuffle(array) {
 
 function startShuffle() {
   shuffleDeck = shuffle(allCards);
+  console.log(shuffleDeck);
 }
 
 var pokerGame = function () {

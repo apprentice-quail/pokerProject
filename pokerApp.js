@@ -12,6 +12,11 @@
 var sget = require('sget');
 maxPlayersAllowed = 7;
 
+var Card = function(number, suit) {
+	this.number = number;
+	this.suit = suit;
+};
+
 var twoClub = new Card(2, "club");
 var threeClub = new Card(3, "club");
 var fourClub = new Card(4, "club");
@@ -74,6 +79,25 @@ var allCards = [twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eigh
 				twoDiamond, threeDiamond, fourDiamond, fiveDiamond, sixDiamond, sevenDiamond, eightDiamond, nineDiamond, tenDiamond, jackDiamond, queenDiamond, kingDiamond, aceDiamond
 				];
 
+var pokerPlayer = function (c1, c2, c3, c4, c5) {
+  this.c1 = c1;
+  this.c2 = c2;
+  this.c3 = c3;
+  this.c4 = c4;
+  this.c5 = c5;
+};
+
+var player1 = new pokerPlayer();
+var player2 = new pokerPlayer(); 
+var player3 = new pokerPlayer();
+var player4 = new pokerPlayer();
+var player5 = new pokerPlayer();
+var player6 = new pokerPlayer();
+var player7 = new pokerPlayer();
+
+var allPlayersInGame = [];
+var allPlayersOutGame = [player1, player2, player3, player4, player5, player6, player7];
+
 var validatePlayerAmount = function(isThisManyPlayersOK) {
 	if(isThisManyPlayersOK > maxPlayersAllowed) {
 		console.log("Sorry, only " + maxPlayersAllowed + " people may play at a time.");
@@ -104,7 +128,6 @@ var gameType = function () {
 
   if (game == "1") {
   	console.log("\nYou chose poker\n");
-  	console.log(allCards);
     poker();
   }
   else if (game == "2") {
@@ -122,13 +145,16 @@ var gameType = function () {
 };
 
 var poker = function () {
+  for (i = 0; i <= numberOfPlayers -1; i++) {
+  	allPlayersInGame.push(allPlayersOutGame[i]);
+  }
 
+  console.log(allPlayersInGame);	
+  pokerGame();
 };
 
-var Card = function(number, suit) {
-	this.number = number;
-	this.suit = suit;
+var pokerGame = function () {
+  
 };
-
 
 startPrompt();

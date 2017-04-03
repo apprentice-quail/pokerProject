@@ -12,62 +12,6 @@
 var sget = require('sget');
 maxPlayersAllowed = 7;
 
-var validatePlayerAmount = function(isThisManyPlayersOK) {
-	if(isThisManyPlayersOK > maxPlayersAllowed) {
-		console.log("Sorry, only " + maxPlayersAllowed + " people may play at a time.");
-		startPrompt();
-	} else if (isThisManyPlayersOK < 2) {
-		console.log("You'll need at least 2 players.");
-		startPrompt();
-	}  else if (isThisManyPlayersOK) {
-		return isThisManyPlayersOK;
-	}
-};
-
-var startPrompt = function() {
-	var howManyPlayers = sget("\nHow many people are playing?\n").trim();
-	numberOfPlayers = parseInt(howManyPlayers);
-	validatePlayerAmount(numberOfPlayers);
-	if (!howManyPlayers.match(/^[0-9]+$/)) {
-		console.log("Please use a number.");
-		startPrompt();
-	} else if (numberOfPlayers >= 2 && numberOfPlayers <= 7) {
-		console.log("\n" + numberOfPlayers + " players are playing.\n");
-		gameType();
-	}
-};
-
-var gameType = function () {
-  var game = sget("\nWhat game would you like to play?\n\n1. Poker\n2. Blackjack\n3. Go Fish\n").trim();
-
-  if (game == "1") {
-  	console.log("\nYou chose poker\n");
-  	console.log(allCards);
-    poker();
-  }
-  else if (game == "2") {
-  	console.log("\nBlackjack is currently unavailable...Please choose a different game..\n");
-    gameType();
-  }
-  else if (game == "3") {
-  	console.log("\nGo Fish is currently unavailable...Please choose a different game..\n");
-    gameType();
-  }
-  else {
-  	console.log("Invalid selection..");
-    gameType();
-  }
-};
-
-var poker = function () {
-
-};
-
-var Card = function(number, suit) {
-	this.number = number;
-	this.suit = suit;
-};
-
 var twoClub = new Card(2, "club");
 var threeClub = new Card(3, "club");
 var fourClub = new Card(4, "club");
@@ -129,5 +73,62 @@ var allCards = [twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eigh
 				twoHeart, threeHeart, fourHeart, fiveHeart, sixHeart, sevenHeart, eightHeart, nineHeart, tenHeart, jackHeart, queenHeart, kingHeart, aceHeart,
 				twoDiamond, threeDiamond, fourDiamond, fiveDiamond, sixDiamond, sevenDiamond, eightDiamond, nineDiamond, tenDiamond, jackDiamond, queenDiamond, kingDiamond, aceDiamond
 				];
+
+var validatePlayerAmount = function(isThisManyPlayersOK) {
+	if(isThisManyPlayersOK > maxPlayersAllowed) {
+		console.log("Sorry, only " + maxPlayersAllowed + " people may play at a time.");
+		startPrompt();
+	} else if (isThisManyPlayersOK < 2) {
+		console.log("You'll need at least 2 players.");
+		startPrompt();
+	}  else if (isThisManyPlayersOK) {
+		return isThisManyPlayersOK;
+	}
+};
+
+var startPrompt = function() {
+	var howManyPlayers = sget("\nHow many people are playing?\n").trim();
+	numberOfPlayers = parseInt(howManyPlayers);
+	validatePlayerAmount(numberOfPlayers);
+	if (!howManyPlayers.match(/^[0-9]+$/)) {
+		console.log("Please use a number.");
+		startPrompt();
+	} else if (numberOfPlayers >= 2 && numberOfPlayers <= 7) {
+		console.log("\n" + numberOfPlayers + " players are playing.\n");
+		gameType();
+	}
+};
+
+var gameType = function () {
+  var game = sget("\nWhat game would you like to play?\n\n1. Poker\n2. Blackjack\n3. Go Fish\n").trim();
+
+  if (game == "1") {
+  	console.log("\nYou chose poker\n");
+  	console.log(allCards);
+    poker();
+  }
+  else if (game == "2") {
+  	console.log("\nBlackjack is currently unavailable...Please choose a different game..\n");
+    gameType();
+  }
+  else if (game == "3") {
+  	console.log("\nGo Fish is currently unavailable...Please choose a different game..\n");
+    gameType();
+  }
+  else {
+  	console.log("Invalid selection..");
+    gameType();
+  }
+};
+
+var poker = function () {
+
+};
+
+var Card = function(number, suit) {
+	this.number = number;
+	this.suit = suit;
+};
+
 
 startPrompt();

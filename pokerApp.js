@@ -18,6 +18,8 @@ var Card = function(number, name, suit) {
 	this.suit = suit;
 };
 
+var royalFlush = {c1: aceClub, c2: kingClub, c3: queenClub, c4: jackClub, c5: tenClub};
+
 var shuffleDeck;
 
 var twoClub = new Card(2, "two", "club");
@@ -182,9 +184,25 @@ var poker = function () {
     allPlayersInGame[i].playerNum = "Player" + parseInt(i+1);
   }
 
+  // allPlayersInGame[0].c1 = aceClub;
+  // allPlayersInGame[0].c2 = kingClub;
+  // allPlayersInGame[0].c3 = queenClub;
+  // allPlayersInGame[0].c4 = jackClub;
+  // allPlayersInGame[0].c5 = tenClub;
+
   console.log(allPlayersInGame);
+  // handWin(); 
   onePair();
 };
+
+// var handWin = function () {
+//   for (i = 0; i <= allPlayersInGame.length -1; i++) {
+    
+//     if (allPlayersInGame[i] == royalFlush) {
+//       console.log("hell yeah, you did it.");
+//     }
+//   }
+// };
 
 var onePair = function() {
   for (i = 0; i <= allPlayersInGame.length -1; i++) {
@@ -196,9 +214,81 @@ var onePair = function() {
 
       console.log(allPlayersInGame[i].playerNum + " got a pair.");
     }
+
+    else if (allPlayersInGame[i].c2.number == allPlayersInGame[i].c1.number || 
+      allPlayersInGame[i].c2.number == allPlayersInGame[i].c3.number ||
+      allPlayersInGame[i].c2.number == allPlayersInGame[i].c4.number ||
+      allPlayersInGame[i].c2.number == allPlayersInGame[i].c5.number) {
+
+      console.log(allPlayersInGame[i].playerNum + " got a pair.");
+    }
+
+    else if (allPlayersInGame[i].c3.number == allPlayersInGame[i].c1.number || 
+      allPlayersInGame[i].c3.number == allPlayersInGame[i].c2.number ||
+      allPlayersInGame[i].c3.number == allPlayersInGame[i].c4.number ||
+      allPlayersInGame[i].c3.number == allPlayersInGame[i].c5.number) {
+
+      console.log(allPlayersInGame[i].playerNum + " got a pair.");
+    }
+
+    else if (allPlayersInGame[i].c4.number == allPlayersInGame[i].c1.number || 
+      allPlayersInGame[i].c4.number == allPlayersInGame[i].c2.number ||
+      allPlayersInGame[i].c4.number == allPlayersInGame[i].c3.number ||
+      allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number) {
+
+      console.log(allPlayersInGame[i].playerNum + " got a pair.");
+    }
+
+    else if (allPlayersInGame[i].c5.number == allPlayersInGame[i].c1.number || 
+      allPlayersInGame[i].c5.number == allPlayersInGame[i].c2.number ||
+      allPlayersInGame[i].c5.number == allPlayersInGame[i].c3.number ||
+      allPlayersInGame[i].c5.number == allPlayersInGame[i].c4.number) {
+
+      console.log(allPlayersInGame[i].playerNum + " got a pair.");
+    }
   }
 
-}
+};
+
+// var twoPair = function () {
+//   for (i = 0; i <= allPlayersInGame.length -1; i++) {
+
+//     if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number && allPlayersInGame[i].c3.number == allPlayersInGame[i].c4.number  || 
+//       allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number && allPlayersInGame[i].c3.number == allPlayersInGame[i].c5.number||
+//       allPlayersInGame[i].c1.number == allPlayersInGame[i].c4.number && allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number) {
+
+//       console.log(allPlayersInGame[i].playerNum + " got two pair.");
+//     }
+
+//     else if (allPlayersInGame[i].c2.number == allPlayersInGame[i].c3.number && allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number  || 
+//       allPlayersInGame[i].c2.number == allPlayersInGame[i].c3.number && allPlayersInGame[i].c1.number == allPlayersInGame[i].c5.number||
+//       allPlayersInGame[i].c2.number == allPlayersInGame[i].c3.number && allPlayersInGame[i].c1.number == allPlayersInGame[i].c4.number)  {
+
+//       console.log(allPlayersInGame[i].playerNum + " got two pair.");
+//     }
+
+//     else if (allPlayersInGame[i].c3.number == allPlayersInGame[i].c4.number && allPlayersInGame[i].c1.number == allPlayersInGame[i].c5.number  || 
+//       allPlayersInGame[i].c3.number == allPlayersInGame[i].c4.number && allPlayersInGame[i].c2.number == allPlayersInGame[i].c5.number||
+//       allPlayersInGame[i].c3.number == allPlayersInGame[i].c4.number && allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number)  {
+
+//       console.log(allPlayersInGame[i].playerNum + " got two pair.");
+//     }
+
+//     else if (allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number && allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number  || 
+//       allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number && allPlayersInGame[i].c1.number == allPlayersInGame[i].c3.number||
+//       allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number && allPlayersInGame[i].c2.number == allPlayersInGame[i].c3.number)  {
+
+//       console.log(allPlayersInGame[i].playerNum + " got two pair.");
+//     }
+
+//     else if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c1.number && allPlayersInGame[i].c5.number == allPlayersInGame[i].c4.number  || 
+//       allPlayersInGame[i].c1.number == allPlayersInGame[i].c1.number && allPlayersInGame[i].c5.number == allPlayersInGame[i].c5.number||
+//       allPlayersInGame[i].c1.number == allPlayersInGame[i].c1.number && allPlayersInGame[i].c5.number == allPlayersInGame[i].c5.number)  {
+
+//       console.log(allPlayersInGame[i].playerNum + " got two pair.");
+//     }
+//   }
+// };
 
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;

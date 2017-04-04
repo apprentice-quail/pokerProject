@@ -12,8 +12,9 @@
 var sget = require('sget');
 maxPlayersAllowed = 7;
 
-var Card = function(number, suit) {
+var Card = function(number, name, suit) {
 	this.number = number;
+	this.name = name;
 	this.suit = suit;
 };
 

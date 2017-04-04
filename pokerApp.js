@@ -22,61 +22,61 @@ var royalFlush = {c1: aceClub, c2: kingClub, c3: queenClub, c4: jackClub, c5: te
 
 var shuffleDeck;
 
-var twoClub = new Card(2, "two", "club");
-var threeClub = new Card(3, "three", "club");
-var fourClub = new Card(4, "four", "club");
-var fiveClub = new Card(5, "five", "club");
-var sixClub = new Card(6, "six", "club");
-var sevenClub = new Card(7, "seven", "club");
-var eightClub = new Card(8, "eight", "club");
-var nineClub = new Card(9, "nine", "club");
-var tenClub = new Card(10, "ten", "club");
-var jackClub = new Card(11, "jack", "club");
-var queenClub = new Card(12, "queen", "club");
-var kingClub = new Card(13, "king", "club");
-var aceClub = new Card(14, "ace", "club");
+var twoClub = new Card(2, "2", "\u2663");
+var threeClub = new Card(3, "3", "\u2663");
+var fourClub = new Card(4, "4", "\u2663");
+var fiveClub = new Card(5, "5", "\u2663");
+var sixClub = new Card(6, "6", "\u2663");
+var sevenClub = new Card(7, "7", "\u2663");
+var eightClub = new Card(8, "8", "\u2663");
+var nineClub = new Card(9, "9", "\u2663");
+var tenClub = new Card(10, "10", "\u2663");
+var jackClub = new Card(11, "J", "\u2663");
+var queenClub = new Card(12, "Q", "\u2663");
+var kingClub = new Card(13, "K", "\u2663");
+var aceClub = new Card(14, "A", "\u2663");
 
-var twoSpade = new Card(2, "two", "spade");
-var threeSpade = new Card(3, "three", "spade");
-var fourSpade = new Card(4, "four", "spade");
-var fiveSpade = new Card(5, "five", "spade");
-var sixSpade = new Card(6, "six", "spade");
-var sevenSpade = new Card(7, "seven", "spade");
-var eightSpade = new Card(8, "eight", "spade");
-var nineSpade = new Card(9, "nine", "spade");
-var tenSpade = new Card(10, "ten", "spade");
-var jackSpade = new Card(11, "jack", "spade");
-var queenSpade = new Card(12, "queen", "spade");
-var kingSpade = new Card(13, "king", "spade");
-var aceSpade = new Card(14, "ace", "spade");
+var twoSpade = new Card(2, "2", "\u2660");
+var threeSpade = new Card(3, "3", "\u2660");
+var fourSpade = new Card(4, "4", "\u2660");
+var fiveSpade = new Card(5, "5", "\u2660");
+var sixSpade = new Card(6, "6", "\u2660");
+var sevenSpade = new Card(7, "7", "\u2660");
+var eightSpade = new Card(8, "8", "\u2660");
+var nineSpade = new Card(9, "9", "\u2660");
+var tenSpade = new Card(10, "10", "\u2660");
+var jackSpade = new Card(11, "J", "\u2660");
+var queenSpade = new Card(12, "Q", "\u2660");
+var kingSpade = new Card(13, "K", "\u2660");
+var aceSpade = new Card(14, "A", "\u2660");
 
-var twoHeart = new Card(2, "two", "heart");
-var threeHeart = new Card(3, "three", "heart");
-var fourHeart = new Card(4, "four", "heart");
-var fiveHeart = new Card(5, "five", "heart");
-var sixHeart = new Card(6, "six", "heart");
-var sevenHeart = new Card(7, "seven", "heart");
-var eightHeart = new Card(8, "eight", "heart");
-var nineHeart = new Card(9, "nine", "heart");
-var tenHeart = new Card(10, "ten", "heart");
-var jackHeart = new Card(11, "jack", "heart");
-var queenHeart = new Card(12, "queen","heart");
-var kingHeart = new Card(13, "king", "heart");
-var aceHeart = new Card(14, "ace", "heart");
+var twoHeart = new Card(2, "2", "\u2665");
+var threeHeart = new Card(3, "3", "\u2665");
+var fourHeart = new Card(4, "4", "\u2665");
+var fiveHeart = new Card(5, "5", "\u2665");
+var sixHeart = new Card(6, "6", "\u2665");
+var sevenHeart = new Card(7, "7", "\u2665");
+var eightHeart = new Card(8, "8", "\u2665");
+var nineHeart = new Card(9, "9", "\u2665");
+var tenHeart = new Card(10, "10", "\u2665");
+var jackHeart = new Card(11, "J", "\u2665");
+var queenHeart = new Card(12, "Q","\u2665");
+var kingHeart = new Card(13, "K", "\u2665");
+var aceHeart = new Card(14, "A", "\u2665");
 
-var twoDiamond = new Card(2, "two", "diamond");
-var threeDiamond = new Card(3, "three", "diamond");
-var fourDiamond = new Card(4, "four", "diamond");
-var fiveDiamond = new Card(5, "five", "diamond");
-var sixDiamond = new Card(6, "six", "diamond");
-var sevenDiamond = new Card(7, "seven", "diamond");
-var eightDiamond = new Card(8, "eight", "diamond");
-var nineDiamond = new Card(9, "nine", "diamond");
-var tenDiamond = new Card(10, "ten", "diamond");
-var jackDiamond = new Card(11, "jack", "diamond");
-var queenDiamond = new Card(12, "queen","diamond");
-var kingDiamond = new Card(13, "king", "diamond");
-var aceDiamond = new Card(14, "ace", "diamond");
+var twoDiamond = new Card(2, "2", "\u2666");
+var threeDiamond = new Card(3, "3", "\u2666");
+var fourDiamond = new Card(4, "4", "\u2666");
+var fiveDiamond = new Card(5, "5", "\u2666");
+var sixDiamond = new Card(6, "6", "\u2666");
+var sevenDiamond = new Card(7, "7", "\u2666");
+var eightDiamond = new Card(8, "8", "\u2666");
+var nineDiamond = new Card(9, "9", "\u2666");
+var tenDiamond = new Card(10, "10", "\u2666");
+var jackDiamond = new Card(11, "J", "\u2666");
+var queenDiamond = new Card(12, "Q","\u2666");
+var kingDiamond = new Card(13, "K", "\u2666");
+var aceDiamond = new Card(14, "A", "\u2666");
 
 var allCards = [twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eightClub, nineClub, tenClub, jackClub, queenClub, kingClub, aceClub,
 				twoSpade, threeSpade, fourSpade, fiveSpade, sixSpade, sevenSpade, eightSpade, nineSpade, tenSpade, jackSpade, queenSpade, kingSpade, aceSpade,
@@ -84,13 +84,14 @@ var allCards = [twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eigh
 				twoDiamond, threeDiamond, fourDiamond, fiveDiamond, sixDiamond, sevenDiamond, eightDiamond, nineDiamond, tenDiamond, jackDiamond, queenDiamond, kingDiamond, aceDiamond
 				];
 
-var pokerPlayer = function (c1, c2, c3, c4, c5, playerNum) {
+var pokerPlayer = function (c1, c2, c3, c4, c5, playerNum, pairCount) {
   this.c1 = c1;
   this.c2 = c2;
   this.c3 = c3;
   this.c4 = c4;
   this.c5 = c5;
   this.playerNum = playerNum;
+  this.pairCount = pairCount;
 };
 
 var player1 = new pokerPlayer();
@@ -182,6 +183,7 @@ var poker = function () {
 
   for (i = 0; i <= allPlayersInGame.length -1; i++) {
     allPlayersInGame[i].playerNum = "Player" + parseInt(i+1);
+    allPlayersInGame[i].pairCount = 0;
   }
 
   // allPlayersInGame[0].c1 = aceClub;
@@ -204,49 +206,44 @@ var poker = function () {
 //   }
 // };
 
+var pairCount = 0;
 var onePair = function() {
   for (i = 0; i <= allPlayersInGame.length -1; i++) {
+      
+    if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number) {
+      allPlayersInGame[i].pairCount += 1;
+    }  
+      if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c3.number) {
+        allPlayersInGame[i].pairCount += 1;
+      } 
+     if  (allPlayersInGame[i].c1.number == allPlayersInGame[i].c4.number) {
+      allPlayersInGame[i].pairCount += 1;
+     }
+      if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c5.number) {
+        allPlayersInGame[i].pairCount += 1;
+      }
+      if (allPlayersInGame[i].c2.number == allPlayersInGame[i].c3.number) {
+        allPlayersInGame[i].pairCount += 1;
+      }
+      if (allPlayersInGame[i].c2.number == allPlayersInGame[i].c4.number) {
+        allPlayersInGame[i].pairCount += 1;
+      }
+      if (allPlayersInGame[i].c2.number == allPlayersInGame[i].c5.number) {
+        allPlayersInGame[i].pairCount += 1;
+      }
+      if (allPlayersInGame[i].c3.number == allPlayersInGame[i].c4.number) {
+        allPlayersInGame[i].pairCount += 1;
+      }
+      if (allPlayersInGame[i].c3.number == allPlayersInGame[i].c5.number) {
+        allPlayersInGame[i].pairCount += 1;
+      }
+      if (allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number) {
+        allPlayersInGame[i].pairCount += 1;
+      } 
 
-    if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number || 
-      allPlayersInGame[i].c1.number == allPlayersInGame[i].c3.number ||
-      allPlayersInGame[i].c1.number == allPlayersInGame[i].c4.number ||
-      allPlayersInGame[i].c1.number == allPlayersInGame[i].c5.number) {
 
-      console.log(allPlayersInGame[i].playerNum + " got a pair.");
-    }
-
-    else if (allPlayersInGame[i].c2.number == allPlayersInGame[i].c1.number || 
-      allPlayersInGame[i].c2.number == allPlayersInGame[i].c3.number ||
-      allPlayersInGame[i].c2.number == allPlayersInGame[i].c4.number ||
-      allPlayersInGame[i].c2.number == allPlayersInGame[i].c5.number) {
-
-      console.log(allPlayersInGame[i].playerNum + " got a pair.");
-    }
-
-    else if (allPlayersInGame[i].c3.number == allPlayersInGame[i].c1.number || 
-      allPlayersInGame[i].c3.number == allPlayersInGame[i].c2.number ||
-      allPlayersInGame[i].c3.number == allPlayersInGame[i].c4.number ||
-      allPlayersInGame[i].c3.number == allPlayersInGame[i].c5.number) {
-
-      console.log(allPlayersInGame[i].playerNum + " got a pair.");
-    }
-
-    else if (allPlayersInGame[i].c4.number == allPlayersInGame[i].c1.number || 
-      allPlayersInGame[i].c4.number == allPlayersInGame[i].c2.number ||
-      allPlayersInGame[i].c4.number == allPlayersInGame[i].c3.number ||
-      allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number) {
-
-      console.log(allPlayersInGame[i].playerNum + " got a pair.");
-    }
-
-    else if (allPlayersInGame[i].c5.number == allPlayersInGame[i].c1.number || 
-      allPlayersInGame[i].c5.number == allPlayersInGame[i].c2.number ||
-      allPlayersInGame[i].c5.number == allPlayersInGame[i].c3.number ||
-      allPlayersInGame[i].c5.number == allPlayersInGame[i].c4.number) {
-
-      console.log(allPlayersInGame[i].playerNum + " got a pair.");
-    }
-  }
+      console.log(allPlayersInGame[i].playerNum + " " + allPlayersInGame[i].pairCount + " pair(s).");
+      }
 
 };
 

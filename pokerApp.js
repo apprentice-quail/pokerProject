@@ -82,12 +82,13 @@ var allCards = [twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eigh
 				twoDiamond, threeDiamond, fourDiamond, fiveDiamond, sixDiamond, sevenDiamond, eightDiamond, nineDiamond, tenDiamond, jackDiamond, queenDiamond, kingDiamond, aceDiamond
 				];
 
-var pokerPlayer = function (c1, c2, c3, c4, c5) {
+var pokerPlayer = function (c1, c2, c3, c4, c5, playerNum) {
   this.c1 = c1;
   this.c2 = c2;
   this.c3 = c3;
   this.c4 = c4;
   this.c5 = c5;
+  this.playerNum = playerNum;
 };
 
 var player1 = new pokerPlayer();
@@ -149,40 +150,55 @@ var gameType = function () {
 
 var poker = function () {
   for (i = 0; i <= numberOfPlayers -1; i++) {
-  	allPlayersInGame.push(allPlayersOutGame[i]);
+    allPlayersInGame.push(allPlayersOutGame[i]);
   }
 
   for (i=0; i <= allPlayersInGame.length - 1; i++) {
     allPlayersInGame[i].c1 = shuffleDeck[i];
     shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
- }
+  }
 
- for (i=0; i <= allPlayersInGame.length - 1; i++) {
+  for (i=0; i <= allPlayersInGame.length - 1; i++) {
     allPlayersInGame[i].c2 = shuffleDeck[i];
     shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
- }
+  }
 
- for (i=0; i <= allPlayersInGame.length - 1; i++) {
+  for (i=0; i <= allPlayersInGame.length - 1; i++) {
     allPlayersInGame[i].c3 = shuffleDeck[i];
     shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
- }
+  }
 
- for (i=0; i <= allPlayersInGame.length - 1; i++) {
+  for (i=0; i <= allPlayersInGame.length - 1; i++) {
     allPlayersInGame[i].c4 = shuffleDeck[i];
     shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
- }
+  }
 
- for (i=0; i <= allPlayersInGame.length - 1; i++) {
+  for (i = 0; i <= allPlayersInGame.length - 1; i++) {
     allPlayersInGame[i].c5 = shuffleDeck[i];
     shuffleDeck.splice(shuffleDeck.indexOf(shuffleDeck[i]), 1);
- }
- 
- console.log(allPlayersInGame);
-//for (i = 0; i <= allPlayersInGame.length -1; i++) {
-  //allPlayersInGame[i].c2 = "no";
-  //}
-  
+  }
+
+  for (i = 0; i <= allPlayersInGame.length -1; i++) {
+    allPlayersInGame[i].playerNum = "Player" + parseInt(i+1);
+  }
+
+  console.log(allPlayersInGame);
+  onePair();
 };
+
+var onePair = function() {
+  for (i = 0; i <= allPlayersInGame.length -1; i++) {
+
+    if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number || 
+      allPlayersInGame[i].c1.number == allPlayersInGame[i].c3.number ||
+      allPlayersInGame[i].c1.number == allPlayersInGame[i].c4.number ||
+      allPlayersInGame[i].c1.number == allPlayersInGame[i].c5.number) {
+
+      console.log(allPlayersInGame[i].playerNum + " got a pair.");
+    }
+  }
+
+}
 
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;

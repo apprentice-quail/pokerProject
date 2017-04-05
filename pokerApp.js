@@ -84,7 +84,7 @@ var allCards = [twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eigh
 				twoDiamond, threeDiamond, fourDiamond, fiveDiamond, sixDiamond, sevenDiamond, eightDiamond, nineDiamond, tenDiamond, jackDiamond, queenDiamond, kingDiamond, aceDiamond
 				];
 
-var pokerPlayer = function (c1, c2, c3, c4, c5, playerNum, pairCount) {
+var pokerPlayer = function (c1, c2, c3, c4, c5, playerNum, pairCount, isFourPair) {
   this.c1 = c1;
   this.c2 = c2;
   this.c3 = c3;
@@ -92,6 +92,7 @@ var pokerPlayer = function (c1, c2, c3, c4, c5, playerNum, pairCount) {
   this.c5 = c5;
   this.playerNum = playerNum;
   this.pairCount = pairCount;
+  this.isFourPair = isFourPair;
 };
 
 var player1 = new pokerPlayer();
@@ -186,13 +187,13 @@ var poker = function () {
     allPlayersInGame[i].pairCount = 0;
   }
 
-  // allPlayersInGame[0].c1 = aceClub;
-  // allPlayersInGame[0].c2 = kingClub;
-  // allPlayersInGame[0].c3 = queenClub;
-  // allPlayersInGame[0].c4 = jackClub;
-  // allPlayersInGame[0].c5 = tenClub;
+  allPlayersInGame[0].c1 = fiveSpade;
+  allPlayersInGame[0].c2 = fiveDiamond;
+  allPlayersInGame[0].c3 = fiveHeart;
+  allPlayersInGame[0].c4 = fiveClub;
+  //allPlayersInGame[0].c5 = tenClub;
 
-  onePair();
+  fourPair();
 };
 
 
@@ -230,10 +231,39 @@ var onePair = function() {
       }
       if (allPlayersInGame[i].c4.number == allPlayersInGame[i].c5.number) {
         allPlayersInGame[i].pairCount += 1;
-      } 
+      }
+
       playerHand();
       console.log("\n" + allPlayersInGame[i].playerNum + " has " + allPlayersInGame[i].pairCount + " pair(s).\n");
 
+    }
+    replay();
+};
+
+var translateWinFourPair = function(x){
+  if (x == true) {
+    return "four of a kind."
+  } else if (x == false) {
+    return x;
+  }
+}
+
+var isFourPair = false;
+var fourPair = function() {
+  for (i = 0; i <= allPlayersInGame.length -1; i++) {
+      
+    if (allPlayersInGame[i].c1.number == allPlayersInGame[i].c2.number && allPlayersInGame[i].c3.number && allPlayersInGame[i].c4.number) {
+      allPlayersInGame[i].isFourPair = true;
+    } else {
+      allPlayersInGame[i].isFourPair = false;
+    }
+
+    playerHand();
+      if (allPlayersInGame[i].isFourPair == true) {
+      console.log("\n" + allPlayersInGame[i].playerNum + " has " + translateWinFourPair(allPlayersInGame[i].isFourPair) + "\n");
+    } else {
+      console.log("");
+    }
     }
     replay();
 };

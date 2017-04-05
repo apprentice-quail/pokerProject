@@ -22,61 +22,61 @@ var royalFlush = {c1: aceClub, c2: kingClub, c3: queenClub, c4: jackClub, c5: te
 
 var shuffleDeck;
 
-var twoClub = new Card(2, "2", "\u2663");
-var threeClub = new Card(3, "3", "\u2663");
-var fourClub = new Card(4, "4", "\u2663");
-var fiveClub = new Card(5, "5", "\u2663");
-var sixClub = new Card(6, "6", "\u2663");
-var sevenClub = new Card(7, "7", "\u2663");
-var eightClub = new Card(8, "8", "\u2663");
-var nineClub = new Card(9, "9", "\u2663");
+var twoClub = new Card(2, "2 ", "\u2663");
+var threeClub = new Card(3, "3 ", "\u2663");
+var fourClub = new Card(4, "4 ", "\u2663");
+var fiveClub = new Card(5, "5 ", "\u2663");
+var sixClub = new Card(6, "6 ", "\u2663");
+var sevenClub = new Card(7, "7 ", "\u2663");
+var eightClub = new Card(8, "8 ", "\u2663");
+var nineClub = new Card(9, "9 ", "\u2663");
 var tenClub = new Card(10, "10", "\u2663");
-var jackClub = new Card(11, "J", "\u2663");
-var queenClub = new Card(12, "Q", "\u2663");
-var kingClub = new Card(13, "K", "\u2663");
-var aceClub = new Card(14, "A", "\u2663");
+var jackClub = new Card(11, "J ", "\u2663");
+var queenClub = new Card(12, "Q ", "\u2663");
+var kingClub = new Card(13, "K ", "\u2663");
+var aceClub = new Card(14, "A ", "\u2663");
 
-var twoSpade = new Card(2, "2", "\u2660");
-var threeSpade = new Card(3, "3", "\u2660");
-var fourSpade = new Card(4, "4", "\u2660");
-var fiveSpade = new Card(5, "5", "\u2660");
-var sixSpade = new Card(6, "6", "\u2660");
-var sevenSpade = new Card(7, "7", "\u2660");
-var eightSpade = new Card(8, "8", "\u2660");
-var nineSpade = new Card(9, "9", "\u2660");
+var twoSpade = new Card(2, "2 ", "\u2660");
+var threeSpade = new Card(3, "3 ", "\u2660");
+var fourSpade = new Card(4, "4 ", "\u2660");
+var fiveSpade = new Card(5, "5 ", "\u2660");
+var sixSpade = new Card(6, "6 ", "\u2660");
+var sevenSpade = new Card(7, "7 ", "\u2660");
+var eightSpade = new Card(8, "8 ", "\u2660");
+var nineSpade = new Card(9, "9 ", "\u2660");
 var tenSpade = new Card(10, "10", "\u2660");
-var jackSpade = new Card(11, "J", "\u2660");
-var queenSpade = new Card(12, "Q", "\u2660");
-var kingSpade = new Card(13, "K", "\u2660");
-var aceSpade = new Card(14, "A", "\u2660");
+var jackSpade = new Card(11, "J ", "\u2660");
+var queenSpade = new Card(12, "Q ", "\u2660");
+var kingSpade = new Card(13, "K ", "\u2660");
+var aceSpade = new Card(14, "A ", "\u2660");
 
-var twoHeart = new Card(2, "2", "\u2665");
-var threeHeart = new Card(3, "3", "\u2665");
-var fourHeart = new Card(4, "4", "\u2665");
-var fiveHeart = new Card(5, "5", "\u2665");
-var sixHeart = new Card(6, "6", "\u2665");
-var sevenHeart = new Card(7, "7", "\u2665");
-var eightHeart = new Card(8, "8", "\u2665");
-var nineHeart = new Card(9, "9", "\u2665");
+var twoHeart = new Card(2, "2 ", "\u2665");
+var threeHeart = new Card(3, "3 ", "\u2665");
+var fourHeart = new Card(4, "4 ", "\u2665");
+var fiveHeart = new Card(5, "5 ", "\u2665");
+var sixHeart = new Card(6, "6 ", "\u2665");
+var sevenHeart = new Card(7, "7 ", "\u2665");
+var eightHeart = new Card(8, "8 ", "\u2665");
+var nineHeart = new Card(9, "9 ", "\u2665");
 var tenHeart = new Card(10, "10", "\u2665");
-var jackHeart = new Card(11, "J", "\u2665");
-var queenHeart = new Card(12, "Q","\u2665");
-var kingHeart = new Card(13, "K", "\u2665");
-var aceHeart = new Card(14, "A", "\u2665");
+var jackHeart = new Card(11, "J ", "\u2665");
+var queenHeart = new Card(12, "Q ","\u2665");
+var kingHeart = new Card(13, "K ", "\u2665");
+var aceHeart = new Card(14, "A ", "\u2665");
 
-var twoDiamond = new Card(2, "2", "\u2666");
-var threeDiamond = new Card(3, "3", "\u2666");
-var fourDiamond = new Card(4, "4", "\u2666");
-var fiveDiamond = new Card(5, "5", "\u2666");
-var sixDiamond = new Card(6, "6", "\u2666");
-var sevenDiamond = new Card(7, "7", "\u2666");
-var eightDiamond = new Card(8, "8", "\u2666");
-var nineDiamond = new Card(9, "9", "\u2666");
+var twoDiamond = new Card(2, "2 ", "\u2666");
+var threeDiamond = new Card(3, "3 ", "\u2666");
+var fourDiamond = new Card(4, "4 ", "\u2666");
+var fiveDiamond = new Card(5, "5 ", "\u2666");
+var sixDiamond = new Card(6, "6 ", "\u2666");
+var sevenDiamond = new Card(7, "7 ", "\u2666");
+var eightDiamond = new Card(8, "8 ", "\u2666");
+var nineDiamond = new Card(9, "9 ", "\u2666");
 var tenDiamond = new Card(10, "10", "\u2666");
-var jackDiamond = new Card(11, "J", "\u2666");
-var queenDiamond = new Card(12, "Q","\u2666");
-var kingDiamond = new Card(13, "K", "\u2666");
-var aceDiamond = new Card(14, "A", "\u2666");
+var jackDiamond = new Card(11, "J ", "\u2666");
+var queenDiamond = new Card(12, "Q ","\u2666");
+var kingDiamond = new Card(13, "K ", "\u2666");
+var aceDiamond = new Card(14, "A ", "\u2666");
 
 var allCards = [twoClub, threeClub, fourClub, fiveClub, sixClub, sevenClub, eightClub, nineClub, tenClub, jackClub, queenClub, kingClub, aceClub,
 				twoSpade, threeSpade, fourSpade, fiveSpade, sixSpade, sevenSpade, eightSpade, nineSpade, tenSpade, jackSpade, queenSpade, kingSpade, aceSpade,
@@ -267,12 +267,15 @@ var replay = function () {
     if (choice == "1") {
     allPlayersInGame = [];
     allPlayersOutGame = [player1, player2, player3, player4, player5, player6, player7];
+    console.log("-----------------------------");
     console.log("\nYou have a serious problem.\n");
     console.log("-----------------------------");
     startPrompt(); 
     }
     else if (choice == "2") {
+    console.log("-----------------------------");
     console.log("\nGlad to see you move on and get the help you need.\nProblem Gambling Helpline\n(855) 387-8523\n");
+    console.log("-----------------------------");
     process.exit(); 
     }
     else {
